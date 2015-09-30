@@ -16,6 +16,7 @@ export default class AddTodo extends Component {
     const node = findDOMNode(this.refs.input);
     const text = node.value.trim();
     this.props.onAddClick(text);
+    console.log(text);
     node.value = '';
   }
 }

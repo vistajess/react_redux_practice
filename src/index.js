@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
-import App from './components/App'
+import { createStore } from 'redux';
+import { Provider } from 'react-redux'; 
+import App from './components/App';
+import todoApp from './reducers';
+
+let store = createStore(todoApp);
+
+let rootElement = document.getElementById('mount');
 
 React.render(
-  <App/>,
-  document.getElementById('mount')
+  <Provider store={store}>
+    {() => <App />}
+  </Provider>,
+  rootElement
 );
 
 
